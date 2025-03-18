@@ -2,8 +2,9 @@
 
 Après une lecture horizontale des consignes, j'ai pris la décision d'utiliser **DataTables** et **Bootstrap** pour l'affichage des listes. Cela simplifie la création de listes qui seront ergonomiques, performantes et esthétiques, tout en rendant le projet plus scalable.
 
-# Récapitulatif - Etape 1 : Affichage du contenu du fichier avec le cookie
-## Objectif : Afficher le contenu spécifique d’un client selon un cookie (clienta, clientb, clientc).
+# Récapitulatif - Etape 1
+## Objectif : 
+Afficher le contenu spécifique d’un client selon un cookie (clienta, clientb, clientc).
 
 ## Technologies utilisées :
 jQuery : Pour la gestion dynamique du contenu.
@@ -16,8 +17,9 @@ Lorsqu'un client est sélectionné, un appel AJAX charge le fichier PHP associé
 Le contenu du fichier est inséré dynamiquement dans la div.dynamic-div.
 
 
-# Récapitulatif - Etape 2 : Utilisation de DataTables pour l'affichage des voitures
-## Objectif : Afficher dynamiquement la liste des voitures en fonction du client avec DataTables.
+# Récapitulatif - Etape 2
+## Objectif : 
+Afficher dynamiquement la liste des voitures en fonction du client avec DataTables.
 
 ## Technologies utilisées :
 DataTables : Pour la gestion de la table dynamique (recherche, tri, pagination).
@@ -28,7 +30,7 @@ DataTables est utilisé pour rendre la table des voitures interactive avec des f
 La table est remplie avec les donnees du fichiers cars.json en fonction du client en cours.
 La table est configurée avec un fichier de traduction pour avoir les boutons ,infos , ... En francais
 
-# Récapitulatif - Etape 3 : Affichage des détails d’une voiture
+# Récapitulatif - Etape 3
 ## Objectif : Afficher une vue détaillée d’une voiture.
 
 ## Méthode :
@@ -38,7 +40,7 @@ Les informations de la voiture (modèle, marque, année, puissance, couleur, gar
 Le retour à la liste des voitures se fait sans recharger la page, en réutilisant AJAX.
 
 
-# Récapitulatif - Étape 4 : Module Garage
+# Récapitulatif - Étape 4
 ## Objectif :
 Ajouter un module Garage pour le client B, permettant d’afficher une liste de garages et leurs détails. Le module doit être dynamique, sans recharger la page.
 
@@ -53,7 +55,7 @@ Le module change dynamiquement sans recharger la page, on garde le principe des 
 Ce select n'est visible que par le clientb pour plus de coherence.
 
 
-# Récapitulatif - Étape 5 : Personnalisation des Voitures
+# Récapitulatif - Étape 5
 ## Objectif :
 Appliquer des couleurs spécifiques aux voitures dans la vue liste :
 
