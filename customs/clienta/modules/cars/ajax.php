@@ -24,9 +24,21 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($filteredCars as $car) { ?>
-            <tr>
-                <td><?php echo $car['modelName']; ?></td>
+        <?php foreach ($filteredCars as $car) { 
+            // On recupere le timestamps
+            $carYearTimestamp = $car['year'];
+            // Calcul de la difference en annees
+            $carAge = (time() - $carYearTimestamp) / (60 * 60 * 24 * 365);
+
+            $rowClass = '';
+            if ($carAge > 10) {
+                $rowClass = 'old-car';
+            } elseif ($carAge < 2) {
+                $rowClass = 'new-car';
+            }
+            ?>
+            <tr class="<?php echo $rowClass; ?>">
+                <td><?php echo $car['modelName'];  ?></td>
                 <td><?php echo $car['brand']; ?></td>
                 <td><?php echo date("Y", $car['year']); ?></td>
                 <td><?php echo $car['power']; ?></td>

@@ -80,4 +80,11 @@
     margin-bottom: 10px;
 }
 
+.old-car {
+    background-color: #f8d7da !important;
+}
+
+.new-car {
+    background-color: #d4edda !important;
+}
 

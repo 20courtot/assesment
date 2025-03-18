@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function loadContentForClient(client) {
-        document.cookie = "client=" + client + "; path=/";
+        document.cookie = "client=" + client + "; path=/; Secure";
         // Module par defaut cars sauf pour le clientb
         var module = (client === "clientb") ? $(".dynamic-div").data("module") : "cars";
         var script = $(".dynamic-div").data("script");

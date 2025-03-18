@@ -52,3 +52,35 @@ Le module change dynamiquement sans recharger la page, on garde le principe des 
 
 Ce select n'est visible que par le clientb pour plus de coherence.
 
+
+# Récapitulatif - Étape 5 : Personnalisation des Voitures
+## Objectif :
+Appliquer des couleurs spécifiques aux voitures dans la vue liste :
+
+Rouge pour les voitures de plus de 10 ans.
+Verte pour celles de moins de 2 ans.
+
+## Méthode :
+Calcul de l'âge des voitures :
+Je récupère le timestamp de la voiture puis calcule l'âge en années en soustrayant la date actuelle au timestamp de l'année des data.
+
+Application des couleurs :
+Pour chaque voiture, une classe CSS est appliquée à la ligne de la dataTable.
+
+Pour avoir des exemples j'ai modifie les annees de 2 voitures
+
+
+# Etape 6 : Secriser les donnees
+Les problemes potentiels : 
+
+1. Accès aux fichiers JSON sans autorisation : Les données client sont stockées en clair dans des fichiers JSON, accessibles si le serveur est mal configuré.
+2. Vol de données via le cookie client : Le cookie utilisé pour identifier le client peut être intercepté ou falsifié si la connexion n’est pas sécurisée (par exemple, via HTTPS).
+3. Vulnérabilité au vol de session : Si les cookies de session ne sont pas correctement protégés (par exemple, sans attribut HttpOnly ou Secure), un attaquant pourrait voler une session valide.
+4. Absence de validation de l'intégrité des fichiers JSON : Un attaquant pourrait modifier manuellement les fichiers JSON pour injecter de fausses données ou corrompre les informations du client.
+
+
+Pour sécuriser les données des clients, on pourrait commencer par mettre en place un systeme d'authentification plus robuste pour s'assurer une premiere serrure d'acces à notre application
+
+Ensuite, il serait préférable de remplacer les fichiers JSON par une base de données SQL ou noSQL, hébergée dans un environnement sécurisé et d'y accéder uniquement par des requêtes préparées pour éviter les injections SQL.
+
+Si l'utilisation d'une base de données n'est pas possible, il est essentiel de sécuriser les fichiers JSON en configurant le fichier .htaccess pour empêcher l'accès direct, en utilisant le système d'authentification pour restreindre l'accès aux fichiers sensibles ou encore en chiffrant ces fichiers.
