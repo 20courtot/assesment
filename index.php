@@ -20,6 +20,13 @@
                 <button class="btn btn-outline-primary" id="setClientB">Client B</button>
                 <button class="btn btn-outline-primary" id="setClientC">Client C</button>
             </div>
+            
+        </div>
+        <div class="d-flex justify-content-center mb-4">
+            <select id="moduleSelector" class="form-select w-auto mx-3">
+                <option value="cars">Voitures</option>
+                <option value="garages">Garages</option>
+            </select>
         </div>
 
         <!-- affichage de la liste des voitures en fonction du client -->

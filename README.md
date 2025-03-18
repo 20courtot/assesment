@@ -36,3 +36,19 @@ Lorsqu’une voiture est sélectionnée, son ID est passé à edit.php via AJAX.
 Le contenu est chargé dynamiquement dans la div.dynamic-div.
 Les informations de la voiture (modèle, marque, année, puissance, couleur, garage) sont affichées.
 Le retour à la liste des voitures se fait sans recharger la page, en réutilisant AJAX.
+
+
+# Récapitulatif - Étape 4 : Module Garage
+## Objectif :
+Ajouter un module Garage pour le client B, permettant d’afficher une liste de garages et leurs détails. Le module doit être dynamique, sans recharger la page.
+
+## Méthode :
+
+Affichage des garages et detail :
+Le module Garage reprend le principe du module cars adapte aux donnees des garages.
+
+Changement dynamique de contenu :
+Le module change dynamiquement sans recharger la page, on garde le principe des boutons mais avec un select qui au changement de valeur va modifier le data-attibute du bouton pour avoir le bon module.
+
+Ce select n'est visible que par le clientb pour plus de coherence.
+

@@ -1,7 +1,8 @@
 $(document).ready(function () {
     function loadContentForClient(client) {
         document.cookie = "client=" + client + "; path=/";
-        var module = $(".dynamic-div").data("module");
+        // Module par defaut cars sauf pour le clientb
+        var module = (client === "clientb") ? $(".dynamic-div").data("module") : "cars";
         var script = $(".dynamic-div").data("script");
         // recuperation du script pour le client
         $.ajax({
@@ -14,6 +15,12 @@ $(document).ready(function () {
                 $(".dynamic-div").html("<p>Erreur de chargement du contenu.</p>");
             }
         });
+        // On affiche le select que pour le clientb
+        if (client === "clientb") {
+            $("#moduleSelector").show();
+        } else {
+            $("#moduleSelector").hide();
+        }
     }
     // Check du cookie pour set le contenu du client
     function checkClientCookie() {
@@ -64,6 +71,37 @@ $(document).ready(function () {
                     $(".dynamic-div").html("<p>Erreur de chargement des détails de la voiture.</p>");
                 }
             });
+        }
+    });
+
+    $(document).on("click", ".viewGarageDetails", function () {
+        var garageId = $(this).data("garage-id");
+        var client = getCookie("client");
+        if (client) {
+            $.ajax({
+                url: "./customs/" + client + "/modules/garages/edit.php",
+                type: "GET",
+                data: { id: garageId },
+                success: function (response) {
+                    $(".dynamic-div").html(response);
+                },
+                error: function () {
+                    $(".dynamic-div").html("<p>Erreur de chargement des détails du garage.</p>");
+                }
+            });
+        }
+    });
+
+    $("#moduleSelector").change(function () {
+        var client = getCookie("client");
+        var selectedModule = $(this).val();
+
+        if (client) {
+            $(".dynamic-div").data("module", selectedModule);
+            var script = selectedModule === "cars" ? "ajax" : "ajax";
+            $(".dynamic-div").data("script", script);
+
+            loadContentForClient(client);
         }
     });
 

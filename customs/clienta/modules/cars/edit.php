@@ -49,7 +49,7 @@ foreach ($garageData as $garageItem) {
         <div class="car-details-body">
             <h4 class="car-details-title"><?php echo $car['modelName']; ?></h4>
             <p class="car-details-text"><strong>Marque :</strong> <?php echo $car['brand']; ?></p>
-            <p class="car-details-text"><strong>Année :</strong> <?php echo date('Y', $car['year']); ?></p>
+            <p class="car-details-text"><strong>Date :</strong> <?php echo date('d/m/Y', $car['year']); ?></p>
             <p class="car-details-text"><strong>Puissance :</strong> <?php echo $car['power']; ?> ch</p>
             <p class="car-details-text">
                 <strong>Couleur :</strong>
