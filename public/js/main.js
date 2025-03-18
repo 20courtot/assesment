@@ -48,4 +48,29 @@ $(document).ready(function () {
     });
 
     checkClientCookie();
+
+    $(document).on("click", ".viewCarDetails", function () {
+        var carId = $(this).data("car-id");
+        var client = getCookie("client"); // Récupérer le client actuel
+        if (client) {
+            $.ajax({
+                url: "./customs/" + client + "/modules/cars/edit.php",
+                type: "GET",
+                data: { id: carId },
+                success: function (response) {
+                    $(".dynamic-div").html(response);
+                },
+                error: function () {
+                    $(".dynamic-div").html("<p>Erreur de chargement des détails de la voiture.</p>");
+                }
+            });
+        }
+    });
+
+    $(document).on("click", ".backToList", function () {
+        var client = getCookie("client");
+        if (client) {
+            loadContentForClient(client);
+        }
+    });
 });

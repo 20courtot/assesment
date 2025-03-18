@@ -24,12 +24,13 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
 
 <h1>Voitures Client B</h1>
 
-<table id="carsTable" class="table table-striped table-bordered">
+<table id="carsTable" class="table table-striped table-bordered" data-lang="..">
     <thead>
         <tr>
             <th>Modèle</th>
             <th>Marque</th>
             <th>Garage</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +40,11 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
                 <td><?php echo strtolower($car['modelName']); ?></td>
                 <td><?php echo $car['brand']; ?></td>
                 <td><?php echo $garages[$car['garageId']] ?? 'Inconnu'; ?></td>
+                <td>
+                    <button class="btn btn-primary viewCarDetails" data-car-id="<?php echo $car['id']; ?>">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </td>
             </tr>
         <?php } ?>
     </tbody>
@@ -50,3 +56,4 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
         "language": <?php echo json_encode($lang); ?>
     });
 </script>
+<script src="public/js/clients/clienta.js"></script>

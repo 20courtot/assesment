@@ -19,6 +19,7 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
             <th>Modèle</th>
             <th>Marque</th>
             <th>Couleur</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +30,11 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
                 <td>
                     <!-- icone voiture pour afficher la couleur de la voiture -->
                     <i class="bi bi-car-front-fill" style="color: <?php echo $car['colorHex']; ?>; font-size: 1.5rem;"></i>
+                </td>
+                <td>
+                    <button class="btn btn-primary viewCarDetails" data-car-id="<?php echo $car['id']; ?>">
+                        <i class="bi bi-eye"></i>
+                    </button>
                 </td>
             </tr>
         <?php } ?>

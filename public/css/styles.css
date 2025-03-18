@@ -1,0 +1,44 @@
+.car-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.car-details-header {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.car-details-card {
+    border-radius: 10px;
+    border: none;
+}
+
+.car-details-body {
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.car-details-title {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.car-details-text {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.car-color-swatch {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.car-back-btn {
+    margin-top: 25px;
+}

@@ -20,6 +20,7 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
             <th>Marque</th>
             <th>Année</th>
             <th>Puissance (ch)</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +30,11 @@ $lang = json_decode(file_get_contents(__DIR__ . '/../../../../public/lang/fr.jso
                 <td><?php echo $car['brand']; ?></td>
                 <td><?php echo date("Y", $car['year']); ?></td>
                 <td><?php echo $car['power']; ?></td>
+                <td>
+                    <button class="btn btn-primary viewCarDetails" data-car-id="<?php echo $car['id']; ?>">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </td>
             </tr>
         <?php } ?>
     </tbody>
