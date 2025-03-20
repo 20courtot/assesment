@@ -1,6 +1,6 @@
 # Choix Prealables
 
-Après une lecture horizontale des consignes, j'ai pris la décision d'utiliser **DataTables** et **Bootstrap** pour l'affichage des listes. Cela simplifie la création de listes qui seront ergonomiques, performantes et esthétiques, tout en rendant le projet plus scalable.
+Après une lecture transversale des consignes, j'ai pris la décision d'utiliser **DataTables** et **Bootstrap** pour l'affichage des listes. Cela simplifie la création de listes qui seront ergonomiques, performantes et esthétiques, tout en rendant le projet plus scalable.
 
 # Récapitulatif - Etape 1
 ## Objectif : 
